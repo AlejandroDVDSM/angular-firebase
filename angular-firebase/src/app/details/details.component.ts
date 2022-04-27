@@ -36,11 +36,8 @@ export class DetailsComponent implements OnInit {
   }
 
   editNotes(): void {
-    if (this.movieID != "") {
-      this.movieNotes += " " + this.newNotes
-      this.service.getMovie(this.movieID).subscribe(movie => {
-        movie.notes += " " + this.movieNotes 
-      })
-    }
+    this.service.editNotes(this.movieID, this.newNotes)
+    this.movieNotes += this.newNotes
   }
+  
 }

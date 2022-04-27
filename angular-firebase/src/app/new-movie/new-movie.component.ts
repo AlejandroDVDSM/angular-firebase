@@ -25,20 +25,18 @@ export class NewMovieComponent implements OnInit {
 
   addMovie():void {
     if((this.movieName != undefined || "") && (this.movieRelease != undefined || "") && (this.movieRunningTime != undefined || "")  && (this.movieDirector != undefined || "") && (this.movieScriptwriter != undefined || "") && (this.movieIMDBRating != undefined) && (this.movieMetascoreRating != undefined)) {
-      this.service.getAllMovies().subscribe(movies => {
-        let newMovie = {
-          id: this.movieID,
-          name: this.movieName,
-          release: this.movieRelease,
-          runningTime: this.movieRunningTime,
-          director: this.movieDirector, 
-          scriptwriter: this.movieScriptwriter, 
-          imdbRating: this.movieIMDBRating, 
-          metascoreRating: this.movieMetascoreRating, 
-          notes: this.movieNotes
-        }
-        movies.push(newMovie)
-      })
+      let newMovie = {
+        id: this.movieID,
+        name: this.movieName,
+        release: this.movieRelease,
+        runningTime: this.movieRunningTime,
+        director: this.movieDirector, 
+        scriptwriter: this.movieScriptwriter, 
+        imdbRating: this.movieIMDBRating, 
+        metascoreRating: this.movieMetascoreRating, 
+        notes: this.movieNotes
+      }
+        this.service.addMovie(newMovie)
     }
   }
 }

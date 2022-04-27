@@ -7,12 +7,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DetailsComponent } from './details/details.component';
 import { NewMovieComponent } from './new-movie/new-movie.component';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -33,6 +36,8 @@ import { NewMovieComponent } from './new-movie/new-movie.component';
     FormsModule,
     MatCardModule,
     MatIconModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

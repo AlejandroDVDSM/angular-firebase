@@ -1,7 +1,7 @@
 <mat-list>
-    <mat-list-item class="movie" *ngFor="let movie of movies; let i = index" (click)="displayDetails(movie)">
-        <p class="grid-item">{{movie.name}}</p>
-        <button class="grid-item" mat-fab color="warn" (click)="deleteMovie(i)">
+    <mat-list-item class="movie" *ngFor="let movie of movies; let i = index">
+        <p class="grid-item" (click)="displayDetails(movie)">{{movie.name}}</p>
+        <button class="grid-item" mat-fab color="warn" (click)="deleteMovie(movie.id)">
             <mat-icon>delete</mat-icon>
         </button>
     </mat-list-item>

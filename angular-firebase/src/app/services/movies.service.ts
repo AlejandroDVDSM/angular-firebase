@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable, of } from 'rxjs';
-import { v4 as uuidv4 } from "uuid";
 
-interface Movie {
+/*interface Movie {
   id: string
   name: string | undefined
   release: string | undefined
@@ -12,7 +12,7 @@ interface Movie {
   imdbRating: number | undefined
   metascoreRating: number | undefined
   notes: string | undefined
-}
+}*/
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +20,25 @@ interface Movie {
 
 export class MoviesService {
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
 
-  MOVIES: Movie[] = [
+    getMovies(): Observable<any> {
+      return this.firestore.collection('movies').snapshotChanges();
+    }
+
+    addMovie(movie: any) {
+      return this.firestore.collection('movies').add(movie)
+    }
+
+    deleteMovie(id: string): Promise<any> {
+      return this.firestore.collection('movies').doc(id).delete();
+    }
+
+    editNotes(id: string, data: string) {
+      return this.firestore.collection('movies').doc(id).update({notes: data})
+    }
+
+  /*MOVIES: Movie[] = [
     {id: uuidv4(), name: 'The Pianist', 
     release: '2002', runningTime: '2h 30min', 
     director: 'Roman Polanski', scriptwriter: 'Ronald Harwood', 
@@ -92,5 +108,5 @@ export class MoviesService {
   getMovie(id: string): Observable<Movie> {
     const movie = this.MOVIES.find(m => m.id == id)!
     return of(movie)
-  }
+  }*/
 }

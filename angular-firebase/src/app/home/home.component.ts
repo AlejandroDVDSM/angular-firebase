@@ -9,25 +9,35 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  movies: any = {}
-
+  movies: any[] = []
   constructor(private service: MoviesService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getAllMovies().subscribe(movies => {
-      this.movies = movies
-    })
+    this.getMovies()
   }
 
   displayDetails(movie: any) {
     this.router.navigate(['/details', movie])
   }
 
-  deleteMovie(i: number) {
-    console.log("INDEX " + i)
-    this.service.getAllMovies().subscribe(movies => {
-      movies.splice(i, 1)
-      
+  getMovies() {
+    this.service.getMovies().subscribe(movies => {
+      this.movies = []
+      movies.forEach((element: any) => {
+        this.movies.push({
+          id: element.payload.doc.id,
+          ...element.payload.doc.data()
+        })
+      })
+      console.log(this.movies)
+    })
+  }
+
+  deleteMovie(id: string) {
+    this.service.deleteMovie(id).then(() => {
+
+    }).catch(error => {
+      console.log(error)
     })
   }
 }
