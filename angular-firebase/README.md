@@ -10,8 +10,7 @@ If you are eager to increase your list, then you can navigate to the "Add movie"
 
 Finally, if you want to remove one movie of your list, you can click on the trash button.
 
-The link to the deployment of the application is the next: [https://firebaseangulardawii.netlify.app] (https://firebaseangulardawii.netlify.app)
-
+The link to the deployment of the application is the next: [https://firebaseangulardawii.netlify.app](https://firebaseangulardawii.netlify.app)
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
