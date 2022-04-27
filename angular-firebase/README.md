@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
+angular-firebase is an implementation of a simple TO-DO list that allow the user to add movies, read them, update them or delete them. All the movies will be store in Firebase. This is done with the help of [Angular Material](https://material.angular.io).
+
+The user can click in any of the movies to display its details. Once you are inside the details, you can update it notes with funny facts about the movie or your opinions about it.
+
+If you are eager to increase your list, then you can navigate to the "Add movie" section, where you must fill all the fields (excepts "notes") to add a new movie.
+
+Finally, if you want to remove one movie of your list, you can click on the trash button.
+
+The link to the deployment of the application is the next: [https://firebaseangulardawii.netlify.app] (https://firebaseangulardawii.netlify.app)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
