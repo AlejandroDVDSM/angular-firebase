@@ -1,0 +1,45 @@
+<div>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="movieName" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Release</mat-label>
+        <input type="number" min="1900" max="2022" matInput [(ngModel)]="movieRelease" required>
+        <mat-hint>Min 1900</mat-hint>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Running time</mat-label>
+        <input matInput [(ngModel)]="movieRunningTime" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Director</mat-label>
+        <input matInput [(ngModel)]="movieDirector" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Scriptwriter</mat-label>
+        <input matInput [(ngModel)]="movieScriptwriter" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>IMDB Rating</mat-label>
+        <input type="number" min="0" max="10" matInput [(ngModel)]="movieIMDBRating" required>
+        <mat-hint>0.0 - 10</mat-hint>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Metascore rating</mat-label>
+        <mat-hint>0.0 - 100</mat-hint>
+        <input type="number" min="0" max="100" matInput [(ngModel)]="movieMetascoreRating" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Notes</mat-label>
+        <textarea matInput [(ngModel)]="movieNotes"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addMovie()">Add new movie to the list</button>
+</div>
