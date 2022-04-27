@@ -37,7 +37,6 @@ export class DetailsComponent implements OnInit {
 
   editNotes(): void {
     this.service.editNotes(this.movieID, this.newNotes)
-    this.movieNotes += this.newNotes
+    this.movieNotes = this.newNotes
   }
-  
 }

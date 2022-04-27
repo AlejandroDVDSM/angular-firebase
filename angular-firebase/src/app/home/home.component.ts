@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   movies: any[] = []
+   
   constructor(private service: MoviesService, private router: Router) { }
 
   ngOnInit(): void {
@@ -34,10 +35,6 @@ export class HomeComponent implements OnInit {
   }
 
   deleteMovie(id: string) {
-    this.service.deleteMovie(id).then(() => {
-
-    }).catch(error => {
-      console.log(error)
-    })
+    this.service.deleteMovie(id)
   }
 }

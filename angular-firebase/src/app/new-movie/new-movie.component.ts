@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { v4 as uuidv4 } from "uuid";
 import { MoviesService } from '../services/movies.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { MoviesService } from '../services/movies.service';
 })
 export class NewMovieComponent implements OnInit {
 
-  movieID: string = uuidv4()
   movieName: string | undefined
   movieRelease: string | undefined
   movieRunningTime: string | undefined
@@ -26,7 +24,6 @@ export class NewMovieComponent implements OnInit {
   addMovie():void {
     if((this.movieName != undefined || "") && (this.movieRelease != undefined || "") && (this.movieRunningTime != undefined || "")  && (this.movieDirector != undefined || "") && (this.movieScriptwriter != undefined || "") && (this.movieIMDBRating != undefined) && (this.movieMetascoreRating != undefined)) {
       let newMovie = {
-        id: this.movieID,
         name: this.movieName,
         release: this.movieRelease,
         runningTime: this.movieRunningTime,

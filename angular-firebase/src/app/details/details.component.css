@@ -2,3 +2,13 @@
     background-color: #242323;
     margin-top: 1em
 }
+
+.mat-form-field {
+    margin-top: 2em;
+    margin-left: 16px;
+    width: 85em;
+}
+
+textarea {
+    height: 7em;
+}
